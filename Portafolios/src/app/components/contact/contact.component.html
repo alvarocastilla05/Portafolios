@@ -1,0 +1,235 @@
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <!-- Header Section -->
+    <div class="section-header">
+      <h2 class="section-title">¡Hablemos!</h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle">
+        ¿Tienes un proyecto en mente? Me encantaría escuchar tus ideas y ayudarte a hacerlas realidad.
+        Siempre estoy disponible para nuevas oportunidades y colaboraciones.
+      </p>
+    </div>
+
+    <div class="contact-content">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <div class="info-header">
+          <h3>Información de Contacto</h3>
+          <p>{{ getResponseTime() }}</p>
+        </div>
+
+        <div class="info-cards">
+          <div 
+            *ngFor="let info of contactInfo"
+            class="info-card"
+            [style.border-left-color]="info.color">
+            <div class="info-icon" [style.background-color]="info.color">
+              <i [class]="info.icon"></i>
+            </div>
+            <div class="info-content">
+              <h4>{{ info.title }}</h4>
+              <a *ngIf="info.link; else noLink" [href]="info.link" class="info-value">
+                {{ info.value }}
+              </a>
+              <ng-template #noLink>
+                <span class="info-value">{{ info.value }}</span>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-section">
+          <h4>Encuéntrame en:</h4>
+          <div class="social-links">
+            <a 
+              *ngFor="let social of socialLinks"
+              [href]="social.url"
+              target="_blank"
+              class="social-link"
+              [style.background-color]="social.color"
+              [title]="social.username">
+              <i [class]="social.icon"></i>
+              <span class="social-name">{{ social.name }}</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Skills Highlight -->
+        <div class="skills-highlight">
+          <h4>¿En qué puedo ayudarte?</h4>
+          <div class="skills-list">
+            <span 
+              *ngFor="let skill of skills"
+              class="skill-badge">
+              <i class="fas fa-check"></i>
+              {{ skill }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+          <button class="action-btn primary" (click)="downloadCV()">
+            <i class="fas fa-download"></i>
+            Descargar CV
+          </button>
+          <a href="tel:+34612345678" class="action-btn secondary">
+            <i class="fas fa-phone"></i>
+            Llamar Ahora
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form-section">
+        <div class="form-header">
+          <h3>Envíame un Mensaje</h3>
+          <p>Completa el formulario y te responderé lo antes posible</p>
+        </div>
+
+        <!-- Success Message -->
+        <div *ngIf="formSubmitted" class="success-message">
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h4>¡Mensaje Enviado!</h4>
+          <p>Gracias por contactarme. Te responderé pronto.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <form *ngIf="!formSubmitted" class="contact-form" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">
+                <i class="fas fa-user"></i>
+                Nombre Completo
+              </label>
+              <input
+                type="text"
+                id="name"
+                [(ngModel)]="contactForm.name"
+                name="name"
+                placeholder="Tu nombre completo"
+                required>
+            </div>
+            <div class="form-group">
+              <label for="email">
+                <i class="fas fa-envelope"></i>
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                [(ngModel)]="contactForm.email"
+                name="email"
+                placeholder="tu@email.com"
+                required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="subject">
+              <i class="fas fa-tag"></i>
+              Asunto
+            </label>
+            <select
+              id="subject"
+              [(ngModel)]="contactForm.subject"
+              name="subject"
+              required>
+              <option value="">Selecciona un asunto</option>
+              <option value="proyecto-web">Proyecto Web</option>
+              <option value="app-movil">Aplicación Móvil</option>
+              <option value="consulta-general">Consulta General</option>
+              <option value="colaboracion">Propuesta de Colaboración</option>
+              <option value="mantenimiento">Mantenimiento/Soporte</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">
+              <i class="fas fa-comment"></i>
+              Mensaje
+            </label>
+            <textarea
+              id="message"
+              [(ngModel)]="contactForm.message"
+              name="message"
+              rows="6"
+              placeholder="Cuéntame sobre tu proyecto o consulta..."
+              required></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="submit-btn"
+            [disabled]="!isValidForm() || isFormSubmitting">
+            <div *ngIf="isFormSubmitting" class="btn-spinner"></div>
+            <i *ngIf="!isFormSubmitting" class="fas fa-paper-plane"></i>
+            {{ isFormSubmitting ? 'Enviando...' : 'Enviar Mensaje' }}
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <div class="faq-header">
+        <h3>Preguntas Frecuentes</h3>
+        <p>Respuestas a las consultas más comunes</p>
+      </div>
+
+      <div class="faq-list">
+        <div 
+          *ngFor="let faq of faqs; let i = index"
+          class="faq-item"
+          [class.active]="faq.isOpen">
+          <div class="faq-question" (click)="toggleFaq(i)">
+            <h4>{{ faq.question }}</h4>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </div>
+          <div class="faq-answer" [class.open]="faq.isOpen">
+            <p>{{ faq.answer }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="contact-cta">
+      <div class="cta-content">
+        <h3>¿Listo para empezar?</h3>
+        <p>
+          Transformemos tus ideas en soluciones digitales innovadoras.
+          Trabajemos juntos para crear algo extraordinario.
+        </p>
+        <div class="cta-stats">
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Proyectos Completados</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">98%</span>
+            <span class="stat-label">Clientes Satisfechos</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">24h</span>
+            <span class="stat-label">Tiempo de Respuesta</span>
+          </div>
+        </div>
+        <div class="cta-buttons">
+          <a href="mailto:alvaro.developer@email.com" class="btn btn-primary">
+            <i class="fas fa-envelope"></i>
+            Enviar Email
+          </a>
+          <a href="https://calendly.com/alvaro-dev" target="_blank" class="btn btn-outline">
+            <i class="fas fa-calendar"></i>
+            Agendar Reunión
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo/Nombre -->
+    <div class="navbar-brand">
+      <a href="#home" class="brand-link">ÁC</a>
+    </div>
+
+    <!-- Menú de navegación -->
+    <ul class="navbar-menu" [class.active]="menuOpen">
+      <li class="navbar-item">
+        <a href="#home" class="navbar-link" (click)="closeMenu()">Inicio</a>
+      </li>
+      <li class="navbar-item">
+        <a href="#about" class="navbar-link" (click)="closeMenu()">Sobre mí</a>
+      </li>
+      <li class="navbar-item">
+        <a href="#skills" class="navbar-link" (click)="closeMenu()">Habilidades</a>
+      </li>
+      <li class="navbar-item">
+        <a href="#projects" class="navbar-link" (click)="closeMenu()">Proyectos</a>
+      </li>
+      <li class="navbar-item">
+        <a href="#experience" class="navbar-link" (click)="closeMenu()">Experiencia</a>
+      </li>
+      <li class="navbar-item">
+        <a href="#contact" class="navbar-link" (click)="closeMenu()">Contacto</a>
+      </li>
+    </ul>
+
+    <!-- Enlaces sociales -->
+    <div class="navbar-social">
+      <a href="https://github.com/tu-usuario" target="_blank" class="social-link" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="social-link" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+
+    <!-- Botón de menú móvil -->
+    <button class="navbar-toggle" (click)="toggleMenu()" [class.active]="menuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>

@@ -1,0 +1,143 @@
+<section class="experience" id="experience">
+  <div class="experience-container">
+    <div class="section-header">
+      <h2 class="section-title">Mi Trayectoria</h2>
+      <div class="section-line"></div>
+      <p class="section-subtitle">
+        Experiencia profesional y formación académica
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let item of timelineItems; let i = index" [class.left]="i % 2 === 0" [class.right]="i % 2 === 1">
+        
+        <!-- Timeline marker -->
+        <div class="timeline-marker">
+          <div class="timeline-icon" [ngClass]="item.type">
+            <i [class]="getIcon(item.type)"></i>
+          </div>
+          <div class="timeline-line"></div>
+        </div>
+        
+        <!-- Timeline content -->
+        <div class="timeline-content">
+          <div class="timeline-card">
+            <!-- Header with date and status -->
+            <div class="timeline-header">
+              <div class="timeline-date">
+                <i class="fas fa-calendar-alt"></i>
+                <span>{{ item.period }}</span>
+              </div>
+              <div class="timeline-status" [ngClass]="item.status">
+                <span class="status-dot"></span>
+                {{ getStatusText(item.status) }}
+              </div>
+            </div>
+            
+            <!-- Main content -->
+            <div class="timeline-body">
+              <h3 class="timeline-title">{{ item.title }}</h3>
+              <h4 class="timeline-company">
+                <i class="fas fa-building"></i>
+                {{ item.company }}
+              </h4>
+              
+              <p class="timeline-description">{{ item.description }}</p>
+              
+              <!-- Skills used -->
+              <div class="timeline-skills" *ngIf="item.skills && item.skills.length > 0">
+                <h5><i class="fas fa-tools"></i> Tecnologías:</h5>
+                <div class="skills-tags">
+                  <span class="skill-tag" *ngFor="let skill of item.skills">{{ skill }}</span>
+                </div>
+              </div>
+              
+              <!-- Achievements -->
+              <div class="timeline-achievements" *ngIf="item.achievements && item.achievements.length > 0">
+                <h5><i class="fas fa-trophy"></i> Logros destacados:</h5>
+                <ul class="achievements-list">
+                  <li *ngFor="let achievement of item.achievements">
+                    <i class="fas fa-check-circle"></i>
+                    {{ achievement }}
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Footer with type indicator -->
+            <div class="timeline-footer">
+              <div class="type-indicator" [ngClass]="item.type">
+                <i [class]="getIcon(item.type)"></i>
+                <span>{{ getTypeText(item.type) }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience Summary Stats -->
+    <div class="experience-stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon work">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">{{ getWorkExperienceCount() }}</div>
+            <div class="stat-label">Experiencias Laborales</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon education">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">{{ getEducationCount() }}</div>
+            <div class="stat-label">Formación Académica</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon years">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">{{ getTotalYears() }}+</div>
+            <div class="stat-label">Años de Experiencia</div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon skills">
+            <i class="fas fa-code"></i>
+          </div>
+          <div class="stat-content">
+            <div class="stat-number">{{ getTotalSkills() }}</div>
+            <div class="stat-label">Tecnologías Dominadas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="experience-cta">
+      <div class="cta-content">
+        <h3>¿Quieres conocer más sobre mi experiencia?</h3>
+        <p>Descarga mi CV completo o contacta conmigo directamente</p>
+        <div class="cta-buttons">
+          <a href="assets/cv/alvaro-castilla-cv.pdf" target="_blank" class="btn btn-primary">
+            <i class="fas fa-download"></i>
+            Descargar CV
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fas fa-envelope"></i>
+            Contactar
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
