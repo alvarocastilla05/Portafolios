@@ -1,0 +1,98 @@
+{
+  "personalInfo": {
+    "name": "Álvaro Castilla Cano",
+    "title": "Técnico en Desarrollo de Aplicaciones Multiplataforma",
+    "subtitle": "Desarrollador Full Stack en formación",
+    "description": "Desarrollador apasionado por aprender y mejorar como programador. Especializado en Java, Angular y Spring Boot con experiencia en desarrollo frontend y metodologías ágiles.",
+    "location": "La Luisiana, Sevilla",
+    "email": "alvarocasno06@gmail.com",
+    "github": "https://github.com/alvarocastilla05",
+    "linkedin": "https://linkedin.com/in/alvaro-castilla",
+    "phone": "+34 XXX XXX XXX",
+    "status": "En formación (2023-2025)",
+    "profileImage": "assets/images/profile.jpg"
+  },
+  "techStack": [
+    "Java",
+    "Angular", 
+    "Spring Boot",
+    "Flutter",
+    "PostgreSQL",
+    "JavaScript",
+    "TypeScript",
+    "Python"
+  ],
+  "mainSkills": [
+    { "name": "Java", "level": 90, "icon": "fab fa-java", "color": "#f89820" },
+    { "name": "Angular", "level": 80, "icon": "fab fa-angular", "color": "#dd0031" },
+    { "name": "Spring Boot", "level": 75, "icon": "fas fa-leaf", "color": "#6db33f" },
+    { "name": "Flutter", "level": 70, "icon": "fas fa-mobile-alt", "color": "#02569b" },
+    { "name": "PostgreSQL", "level": 80, "icon": "fas fa-database", "color": "#336791" },
+    { "name": "TypeScript", "level": 75, "icon": "fas fa-code", "color": "#3178c6" },
+    { "name": "JavaScript", "level": 85, "icon": "fab fa-js-square", "color": "#f7df1e" },
+    { "name": "Python", "level": 60, "icon": "fab fa-python", "color": "#3776ab" }
+  ],
+  "languages": [
+    { "name": "Español", "level": "Nativo", "flag": "🇪🇸" },
+    { "name": "Inglés", "level": "B1", "flag": "🇬🇧" },
+    { "name": "Francés", "level": "A2", "flag": "🇫🇷" }
+  ],
+  "socialLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/alvarocastilla05",
+      "icon": "fab fa-github",
+      "color": "#333333"
+    },
+    {
+      "name": "LinkedIn", 
+      "url": "https://linkedin.com/in/alvaro-castilla",
+      "icon": "fab fa-linkedin",
+      "color": "#0077b5"
+    },
+    {
+      "name": "Email",
+      "url": "mailto:alvarocasno06@gmail.com", 
+      "icon": "fas fa-envelope",
+      "color": "#e74c3c"
+    }
+  ],
+  "experience": [
+    {
+      "company": "BABEL",
+      "position": "Desarrollador Frontend Angular",
+      "period": "2024 - Presente",
+      "location": "Remoto",
+      "type": "work",
+      "description": "Desarrollo de funcionalidades con Angular, colaboración en equipos ágiles con Jira, gestión de repositorios con Azure DevOps y comunicación efectiva para resolución de incidencias.",
+      "technologies": ["Angular", "TypeScript", "Jira", "Azure DevOps"],
+      "achievements": [
+        "Desarrollo de componentes reutilizables",
+        "Colaboración en metodologías ágiles",
+        "Gestión eficiente de repositorios"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Centro de Formación Profesional",
+      "degree": "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma",
+      "period": "2023 - 2025",
+      "status": "En curso"
+    },
+    {
+      "institution": "Centro Educativo",
+      "degree": "Bachillerato",
+      "period": "2021 - 2023", 
+      "status": "Completado"
+    }
+  ],
+  "softSkills": [
+    "Trabajo en equipo",
+    "Adaptación rápida", 
+    "Comunicación efectiva",
+    "Creatividad",
+    "Resolución de problemas",
+    "Aprendizaje continuo"
+  ]
+}
