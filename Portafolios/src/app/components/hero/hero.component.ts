@@ -122,4 +122,72 @@ export class HeroComponent implements OnInit {
   sendEmail() {
     window.location.href = `mailto:${this.personalInfo.email}`;
   }
+
+  scrollToProjects() {
+    this.animatedScrollTo('#projects', 'projects');
+  }
+
+  scrollToContact() {
+    this.animatedScrollTo('#contact', 'contact');
+  }
+
+  private animatedScrollTo(sectionId: string, buttonType: string) {
+    const element = document.querySelector(sectionId);
+    const button = document.querySelector(`.btn-${buttonType}`) as HTMLElement;
+    
+    if (element) {
+      // Animación del botón
+      if (button) {
+        button.classList.add('clicking');
+        setTimeout(() => {
+          button.classList.remove('clicking');
+        }, 600);
+      }
+
+      // Agregar clase de animación antes del scroll
+      document.body.style.scrollBehavior = 'smooth';
+      
+      // Efecto de transición suave en el hero
+      const heroSection = document.querySelector('.hero');
+      if (heroSection) {
+        heroSection.classList.add('scroll-transition');
+      }
+
+      // Pequeño delay para que se vea la animación del botón
+      setTimeout(() => {
+        // Scroll suave con configuración personalizada
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        });
+      }, 200);
+
+      // Remover clase después de la animación
+      setTimeout(() => {
+        if (heroSection) {
+          heroSection.classList.remove('scroll-transition');
+        }
+      }, 1000);
+    }
+  }
+
+  scrollToNext() {
+    const aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    } else {
+      // Si no existe #about, busca la siguiente sección
+      const nextSection = document.querySelector('section:nth-of-type(2)');
+      if (nextSection) {
+        nextSection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  }
 }

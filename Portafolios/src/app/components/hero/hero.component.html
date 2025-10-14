@@ -3,7 +3,7 @@
     <div class="hero-content">
       <!-- Foto de perfil -->
       <div class="hero-image">
-        <img src="assets/images/profile.jpeg" alt="Álvaro Castilla Cano" class="profile-img">
+        <img src="images/profile.jpeg" alt="Álvaro Castilla Cano" class="profile-img">
         <div class="image-ring"></div>
       </div>
 
@@ -12,29 +12,36 @@
         <div class="greeting">
           <span class="hello">Hola, soy</span>
         </div>
-        
+
         <h1 class="hero-name">Álvaro Castilla Cano</h1>
-        
+
         <h2 class="hero-title">Técnico en Desarrollo de Aplicaciones Multiplataforma</h2>
-        
+
         <p class="hero-description">
-          Apasionado al trabajo, me defino como una persona con ganas de aprender cosas nuevas 
-          y desarrollarme como programador, además de obtener una experiencia laboral sólida.
+          Apasionado por la tecnología y el desarrollo de software, me gusta crear soluciones que unan funcionalidad y diseño.
+Busco seguir aprendiendo y creciendo como desarrollador, aportando valor en cada proyecto y enfrentando nuevos retos con entusiasmo.
         </p>
 
-        <!-- Botones simples -->
+        <!-- Botones de acción principales -->
         <div class="hero-actions">
-          <a href="#about" class="btn btn-primary">Sobre mí</a>
-          <a href="#contact" class="btn btn-secondary">Contacto</a>
+          <a href="cv/CV_Alvaro_Castilla_Cano.pdf" download="CV_Alvaro_Castilla_Cano.pdf" class="btn btn-download">
+            <i class="fas fa-download"></i>
+            <span>Descargar CV</span>
+          </a>
+
+          <button (click)="scrollToProjects()" class="btn btn-projects">
+            <i class="fas fa-folder-open"></i>
+            <span>Proyectos</span>
+          </button>
+
+          <button (click)="scrollToContact()" class="btn btn-contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contactar</span>
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- Scroll indicator elegante -->
-    <div class="scroll-indicator">
-      <span>Descubre más</span>
-      <i class="fas fa-chevron-down"></i>
-    </div>
   </div>
 
   <!-- Iconos flotantes de fondo -->
@@ -57,12 +64,5 @@
     <div class="floating-icon icon-6">
       <i class="fas fa-mobile-alt"></i>
     </div>
-  </div>
-
-  <!-- Elementos decorativos abstractos -->
-  <div class="decorative-elements">
-    <div class="element element-1"></div>
-    <div class="element element-2"></div>
-    <div class="element element-3"></div>
   </div>
 </section>
