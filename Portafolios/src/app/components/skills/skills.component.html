@@ -1,81 +1,74 @@
-<section class="skills" id="skills">
-  <div class="skills-container">
-    <div class="section-header">
-      <h2 class="section-title">Habilidades Técnicas</h2>
-      <div class="section-line"></div>
-      <p class="section-subtitle">
-        Tecnologías y herramientas que domino en el desarrollo de aplicaciones
-      </p>
+<section class="skills-section" id="skills">
+  <div class="container">
+    <!-- Header -->
+    <div class="skills-header" *ngIf="skillsData">
+      <h2 class="section-title">{{ skillsData.title }}</h2>
+      <p class="section-subtitle">{{ skillsData.subtitle }}</p>
     </div>
 
-    <!-- Categorías de habilidades -->
-    <div class="skills-categories">
-      <button 
-        *ngFor="let category of categories" 
-        class="category-btn"
-        [class.active]="selectedCategory === category.id"
-        (click)="selectCategory(category.id)">
-        <i [class]="category.icon"></i>
-        {{ category.name }}
-      </button>
-    </div>
-
-    <!-- Grid de habilidades -->
-    <div class="skills-grid">
-      <div 
-        *ngFor="let skill of getFilteredSkills()" 
-        class="skill-card"
-        [attr.data-level]="skill.level">
-        
-        <!-- Logo de la tecnología -->
-        <div class="skill-logo">
-          <div class="skill-icon" [style.background-color]="skill.color">
-            <i [class]="skill.icon"></i>
-          </div>
-          <div class="skill-overlay">
-            <span class="skill-level">{{ skill.level }}</span>
-          </div>
-        </div>
-
-        <!-- Información de la habilidad -->
-        <div class="skill-info">
-          <h3 class="skill-name">{{ skill.name }}</h3>
-          <p class="skill-description">{{ skill.description }}</p>
-          
-          <!-- Barra de progreso -->
-          <div class="skill-progress">
-            <div class="progress-bar">
-              <div 
-                class="progress-fill" 
-                [style.width.%]="skill.percentage"
-                [style.background-color]="skill.color">
-              </div>
+    <!-- Skills Grid -->
+    <div class="skills-content" *ngIf="skillsData">
+      <!-- Main Technical Skills Grid -->
+      <div class="main-skills-grid">
+        <div 
+          class="skill-category-card" 
+          *ngFor="let category of skillsData.categories; let i = index"
+          [style.animation-delay.ms]="i * 150"
+        >
+          <!-- Category Header -->
+          <div class="category-header">
+            <div class="category-icon">
+              <i [class]="category.icon"></i>
             </div>
-            <span class="progress-text">{{ skill.percentage }}%</span>
+            <h3 class="category-title">{{ category.title }}</h3>
           </div>
 
-          <!-- Experiencia -->
-          <div class="skill-experience">
-            <i class="fas fa-clock"></i>
-            <span>{{ skill.experience }}</span>
+          <!-- Skills List -->
+          <div class="skills-list">
+            <div 
+              class="skill-item" 
+              *ngFor="let skill of category.skills; let j = index"
+              [style.animation-delay.ms]="(i * 150) + (j * 50)"
+              [style.--skill-color]="skill.color"
+            >
+              <div class="skill-content">
+                <div class="skill-icon-wrapper">
+                  <div class="skill-icon" [style.color]="skill.color">
+                    <i [class]="skill.icon"></i>
+                  </div>
+                </div>
+                <div class="skill-info">
+                  <h4 class="skill-name">{{ skill.name }}</h4>
+                  <p class="skill-description">{{ skill.description }}</p>
+                </div>
+              </div>
+              <div class="skill-level-indicator" [style.background]="skill.color"></div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Certificaciones -->
-    <div class="certifications">
-      <h3>Certificaciones y Cursos</h3>
-      <div class="cert-list">
-        <div class="cert-item" *ngFor="let cert of certifications">
-          <div class="cert-icon">
-            <i [class]="cert.icon" [style.color]="cert.color"></i>
+        <!-- Methodologies Card integrated in the main grid -->
+        <div class="skill-category-card methodologies-card" *ngIf="skillsData.methodologies" [style.animation-delay.ms]="skillsData.categories.length * 150">
+          <div class="category-header">
+            <div class="category-icon">
+              <i class="fas fa-cog"></i>
+            </div>
+            <h3 class="category-title">{{ skillsData.methodologies.title }}</h3>
           </div>
-          <div class="cert-content">
-            <span class="cert-title">{{ cert.title }}</span>
-            <span class="cert-institution">{{ cert.institution }}</span>
+          
+          <div class="methodologies-list">
+            <div 
+              class="methodology-item" 
+              *ngFor="let item of skillsData.methodologies.items; let i = index"
+              [style.animation-delay.ms]="(skillsData.categories.length * 150) + (i * 50)"
+              [style.--methodology-color]="item.color"
+            >
+              <div class="methodology-icon" [style.background]="item.color + '15'" [style.color]="item.color">
+                <i [class]="item.icon"></i>
+              </div>
+              <span class="methodology-name">{{ item.name }}</span>
+            </div>
           </div>
-          <span class="cert-year">{{ cert.year }}</span>
         </div>
       </div>
     </div>
