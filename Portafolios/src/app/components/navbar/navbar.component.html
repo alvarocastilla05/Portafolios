@@ -1,39 +1,68 @@
-<nav class="navbar">
+<nav class="navbar" [class.scrolled]="isScrolled">
   <div class="navbar-container">
     <!-- Logo/Nombre -->
     <div class="navbar-brand">
-      <a href="#home" class="brand-link">ÁC</a>
+      <button (click)="navigateToSection('home')" class="brand-link">
+        <span class="brand-text">ÁC</span>
+        <div class="brand-glow"></div>
+      </button>
     </div>
 
     <!-- Menú de navegación -->
     <ul class="navbar-menu" [class.active]="menuOpen">
       <li class="navbar-item">
-        <a href="#home" class="navbar-link" (click)="closeMenu()">Inicio</a>
+        <button (click)="navigateToSection('home')" class="navbar-link" [class.active]="activeSection === 'home'">
+          <i class="fas fa-home"></i>
+          <span>Inicio</span>
+          <div class="link-glow"></div>
+        </button>
       </li>
       <li class="navbar-item">
-        <a href="#about" class="navbar-link" (click)="closeMenu()">Sobre mí</a>
+        <button (click)="navigateToSection('about')" class="navbar-link" [class.active]="activeSection === 'about'">
+          <i class="fas fa-user"></i>
+          <span>Sobre mí</span>
+          <div class="link-glow"></div>
+        </button>
       </li>
       <li class="navbar-item">
-        <a href="#skills" class="navbar-link" (click)="closeMenu()">Habilidades</a>
+        <button (click)="navigateToSection('skills')" class="navbar-link" [class.active]="activeSection === 'skills'">
+          <i class="fas fa-code"></i>
+          <span>Habilidades</span>
+          <div class="link-glow"></div>
+        </button>
       </li>
       <li class="navbar-item">
-        <a href="#projects" class="navbar-link" (click)="closeMenu()">Proyectos</a>
+        <button (click)="navigateToSection('projects')" class="navbar-link" [class.active]="activeSection === 'projects'">
+          <i class="fas fa-folder-open"></i>
+          <span>Proyectos</span>
+          <div class="link-glow"></div>
+        </button>
       </li>
       <li class="navbar-item">
-        <a href="#experience" class="navbar-link" (click)="closeMenu()">Experiencia</a>
+        <button (click)="navigateToSection('experience')" class="navbar-link" [class.active]="activeSection === 'experience'">
+          <i class="fas fa-briefcase"></i>
+          <span>Experiencia</span>
+          <div class="link-glow"></div>
+        </button>
       </li>
       <li class="navbar-item">
-        <a href="#contact" class="navbar-link" (click)="closeMenu()">Contacto</a>
+        <button (click)="navigateToSection('contact')" class="navbar-link" [class.active]="activeSection === 'contact'">
+          <i class="fas fa-envelope"></i>
+          <span>Contacto</span>
+          <div class="link-glow"></div>
+        </button>
       </li>
     </ul>
 
     <!-- Enlaces sociales -->
     <div class="navbar-social">
-      <a href="https://github.com/tu-usuario" target="_blank" class="social-link" title="GitHub">
+      <a href="https://github.com/alvarocastilla05" target="_blank" class="social-link" title="GitHub">
         <i class="fab fa-github"></i>
+        <div class="social-glow"></div>
       </a>
-      <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="social-link" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
+      <a href="mailto:alvarocasno06@gmail.com" class="social-link" title="Email">
+        <i class="fas fa-envelope"></i>
+        <div class="social-glow"></div>
       </a>
     </div>
 
@@ -42,6 +71,12 @@
       <span></span>
       <span></span>
       <span></span>
+      <div class="toggle-glow"></div>
     </button>
+  </div>
+  
+  <!-- Efecto de loading para navegación -->
+  <div class="nav-loading" [class.active]="isNavigating">
+    <div class="loading-bar"></div>
   </div>
 </nav>
