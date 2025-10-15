@@ -94,5 +94,130 @@
     "Creatividad",
     "Resolución de problemas",
     "Aprendizaje continuo"
-  ]
+  ],
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "subtitle": "Tecnologías y herramientas que domino",
+    "categories": [
+      {
+        "id": "languages",
+        "title": "Lenguajes",
+        "icon": "fas fa-code",
+        "skills": [
+          {
+            "name": "Java",
+            "icon": "fab fa-java",
+            "description": "Lenguaje principal",
+            "color": "#f89820"
+          },
+          {
+            "name": "JavaScript/TypeScript",
+            "icon": "fab fa-js-square",
+            "description": "Frontend & Backend",
+            "color": "#f7df1e"
+          },
+          {
+            "name": "Python",
+            "icon": "fab fa-python",
+            "description": "Desarrollo general",
+            "color": "#3776ab"
+          }
+        ]
+      },
+      {
+        "id": "frameworks",
+        "title": "Frameworks",
+        "icon": "fas fa-layer-group",
+        "skills": [
+          {
+            "name": "Angular",
+            "icon": "fab fa-angular",
+            "description": "Experiencia laboral",
+            "color": "#dd0031"
+          },
+          {
+            "name": "Spring Boot",
+            "icon": "fas fa-leaf",
+            "description": "Backend Java",
+            "color": "#6db33f"
+          },
+          {
+            "name": "Flutter",
+            "icon": "fas fa-mobile-alt",
+            "description": "Desarrollo móvil",
+            "color": "#02569b"
+          }
+        ]
+      },
+      {
+        "id": "web",
+        "title": "Tecnologías Web",
+        "icon": "fas fa-globe",
+        "skills": [
+          {
+            "name": "HTML5",
+            "icon": "fab fa-html5",
+            "description": "Estructura web",
+            "color": "#e34f26"
+          },
+          {
+            "name": "CSS3",
+            "icon": "fab fa-css3-alt",
+            "description": "Estilos avanzados",
+            "color": "#1572b6"
+          }
+        ]
+      },
+      {
+        "id": "tools",
+        "title": "Herramientas",
+        "icon": "fas fa-tools",
+        "skills": [
+          {
+            "name": "PostgreSQL",
+            "icon": "fas fa-database",
+            "description": "Base de datos",
+            "color": "#336791"
+          },
+          {
+            "name": "Docker",
+            "icon": "fab fa-docker",
+            "description": "Contenedores",
+            "color": "#2496ed"
+          },
+          {
+            "name": "Figma",
+            "icon": "fab fa-figma",
+            "description": "Prototipado",
+            "color": "#f24e1e"
+          }
+        ]
+      }
+    ],
+    "methodologies": {
+      "title": "Metodologías & Herramientas de Trabajo",
+      "items": [
+        {
+          "name": "Metodologías Ágiles",
+          "icon": "fas fa-users-cog",
+          "color": "#667eea"
+        },
+        {
+          "name": "Jira",
+          "icon": "fab fa-jira",
+          "color": "#0052cc"
+        },
+        {
+          "name": "Azure DevOps",
+          "icon": "fab fa-microsoft",
+          "color": "#0078d4"
+        },
+        {
+          "name": "Control de Versiones",
+          "icon": "fas fa-code-branch",
+          "color": "#f05032"
+        }
+      ]
+    }
+  }
 }
