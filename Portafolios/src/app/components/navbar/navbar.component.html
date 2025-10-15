@@ -18,13 +18,6 @@
         </button>
       </li>
       <li class="navbar-item">
-        <button (click)="navigateToSection('about')" class="navbar-link" [class.active]="activeSection === 'about'">
-          <i class="fas fa-user"></i>
-          <span>Sobre mí</span>
-          <div class="link-glow"></div>
-        </button>
-      </li>
-      <li class="navbar-item">
         <button (click)="navigateToSection('skills')" class="navbar-link" [class.active]="activeSection === 'skills'">
           <i class="fas fa-code"></i>
           <span>Habilidades</span>
@@ -32,14 +25,23 @@
         </button>
       </li>
       <li class="navbar-item">
-        <button (click)="navigateToSection('projects')" class="navbar-link" [class.active]="activeSection === 'projects'">
+        <button (click)="navigateToSection('about')" class="navbar-link" [class.active]="activeSection === 'about'">
+          <i class="fas fa-user"></i>
+          <span>Sobre mí</span>
+          <div class="link-glow"></div>
+        </button>
+      </li>
+      <li class="navbar-item">
+        <button (click)="navigateToSection('projects')" class="navbar-link"
+          [class.active]="activeSection === 'projects'">
           <i class="fas fa-folder-open"></i>
           <span>Proyectos</span>
           <div class="link-glow"></div>
         </button>
       </li>
       <li class="navbar-item">
-        <button (click)="navigateToSection('experience')" class="navbar-link" [class.active]="activeSection === 'experience'">
+        <button (click)="navigateToSection('experience')" class="navbar-link"
+          [class.active]="activeSection === 'experience'">
           <i class="fas fa-briefcase"></i>
           <span>Experiencia</span>
           <div class="link-glow"></div>
@@ -74,7 +76,7 @@
       <div class="toggle-glow"></div>
     </button>
   </div>
-  
+
   <!-- Efecto de loading para navegación -->
   <div class="nav-loading" [class.active]="isNavigating">
     <div class="loading-bar"></div>
