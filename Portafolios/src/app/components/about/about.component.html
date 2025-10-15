@@ -1,116 +1,168 @@
-<section class="about" id="about">
-  <div class="about-container">
-    <div class="section-header">
+<section class="about-section" id="about">
+  <div class="container">
+    <!-- Header -->
+    <div class="about-header">
       <h2 class="section-title">Sobre mí</h2>
-      <div class="section-line"></div>
+      <p class="section-subtitle">
+        Conoce más sobre mi experiencia, habilidades y lo que me apasiona del desarrollo de software
+      </p>
     </div>
 
+    <!-- About Content -->
     <div class="about-content">
-      <!-- Descripción personal -->
-      <div class="about-description">
-        <h3>¡Hola! Soy Álvaro</h3>
-        <p class="main-description">
-          Apasionado del trabajo, con ganas de aprender cosas nuevas y enfrentar nuevos retos. 
-          Me considero una persona proactiva, con facilidad para trabajar en equipo y adaptarme 
-          rápidamente a nuevos entornos. Siempre busco la excelencia en cada proyecto que emprendo.
-        </p>
-        <p>
-          Como Técnico en Desarrollo de Aplicaciones Multiplataforma, tengo experiencia en el 
-          desarrollo web y móvil, utilizando tecnologías modernas como Angular, Spring Boot y Flutter. 
-          Me apasiona crear soluciones tecnológicas que generen un impacto positivo.
-        </p>
+      <!-- Introduction Card -->
+      <div class="about-card introduction-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <h3 class="card-title">¡Hola! Soy Álvaro</h3>
+        </div>
+        <div class="card-content">
+          <p class="main-description">
+            Apasionado del trabajo, con ganas de aprender cosas nuevas y enfrentar nuevos retos. 
+            Me considero una persona proactiva, con facilidad para trabajar en equipo y adaptarme 
+            rápidamente a nuevos entornos. Siempre busco la excelencia en cada proyecto que emprendo.
+          </p>
+          <p class="secondary-description">
+            Como Técnico en Desarrollo de Aplicaciones Multiplataforma, tengo experiencia en el 
+            desarrollo web y móvil, utilizando tecnologías modernas como Angular, Spring Boot y Flutter. 
+            Me apasiona crear soluciones tecnológicas que generen un impacto positivo.
+          </p>
+        </div>
       </div>
 
-      <!-- Información adicional -->
-      <div class="about-info">
-        <!-- Idiomas -->
-        <div class="info-card">
-          <h4><i class="fas fa-language"></i> Idiomas</h4>
-          <div class="language-list">
-            <div class="language-item">
-              <span class="language-name">Español</span>
-              <span class="language-level">Nativo</span>
-              <div class="language-bar">
-                <div class="language-progress" style="width: 100%"></div>
-              </div>
-            </div>
-            <div class="language-item">
-              <span class="language-name">Inglés</span>
-              <span class="language-level">B1</span>
-              <div class="language-bar">
-                <div class="language-progress" style="width: 70%"></div>
-              </div>
-            </div>
-            <div class="language-item">
-              <span class="language-name">Francés</span>
-              <span class="language-level">A2</span>
-              <div class="language-bar">
-                <div class="language-progress" style="width: 40%"></div>
-              </div>
-            </div>
+      <!-- Languages Card -->
+      <div class="about-card languages-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-language"></i>
           </div>
+          <h3 class="card-title">Idiomas</h3>
         </div>
-
-        <!-- Soft Skills -->
-        <div class="info-card">
-          <h4><i class="fas fa-users"></i> Soft Skills</h4>
-          <div class="skills-grid">
-            <div class="skill-tag">
-              <i class="fas fa-handshake"></i>
-              <span>Trabajo en equipo</span>
+        <div class="card-content">
+          <div class="languages-list">
+            <div class="language-item">
+              <div class="language-info">
+                <span class="language-name">Español</span>
+                <span class="language-level">Nativo</span>
+              </div>
+              <div class="language-bar">
+                <div class="language-progress" style="width: 100%; --progress-color: #667eea"></div>
+              </div>
             </div>
-            <div class="skill-tag">
-              <i class="fas fa-sync-alt"></i>
-              <span>Rápida adaptación</span>
+            <div class="language-item">
+              <div class="language-info">
+                <span class="language-name">Inglés</span>
+                <span class="language-level">B1</span>
+              </div>
+              <div class="language-bar">
+                <div class="language-progress" style="width: 70%; --progress-color: #764ba2"></div>
+              </div>
             </div>
-            <div class="skill-tag">
-              <i class="fas fa-lightbulb"></i>
-              <span>Creatividad</span>
-            </div>
-            <div class="skill-tag">
-              <i class="fas fa-comments"></i>
-              <span>Comunicación</span>
-            </div>
-            <div class="skill-tag">
-              <i class="fas fa-puzzle-piece"></i>
-              <span>Resolución de problemas</span>
-            </div>
-            <div class="skill-tag">
-              <i class="fas fa-clock"></i>
-              <span>Gestión del tiempo</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Datos personales -->
-        <div class="info-card">
-          <h4><i class="fas fa-user"></i> Información</h4>
-          <div class="personal-info">
-            <div class="info-item">
-              <span class="info-label">Ubicación:</span>
-              <span class="info-value">España</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Formación:</span>
-              <span class="info-value">Técnico Superior DAM</span>
-            </div>
-            <div class="info-item">
-              <span class="info-label">Estado:</span>
-              <span class="info-value">Disponible para trabajar</span>
+            <div class="language-item">
+              <div class="language-info">
+                <span class="language-name">Francés</span>
+                <span class="language-level">A2</span>
+              </div>
+              <div class="language-bar">
+                <div class="language-progress" style="width: 40%; --progress-color: #667eea"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Call to action -->
-    <div class="about-cta">
-      <a href="assets/cv/alvaro-castilla-cv.pdf" target="_blank" class="btn btn-outline">
-        <i class="fas fa-download"></i> Descargar CV
-      </a>
-      <a href="#contact" class="btn btn-primary">
-        <i class="fas fa-envelope"></i> Contactar
-      </a>
+      <!-- Soft Skills Card -->
+      <div class="about-card skills-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="card-title">Soft Skills</h3>
+        </div>
+        <div class="card-content">
+          <div class="soft-skills-grid">
+            <div class="soft-skill-item" style="--skill-color: #667eea">
+              <div class="skill-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <span class="skill-name">Trabajo en equipo</span>
+            </div>
+            <div class="soft-skill-item" style="--skill-color: #764ba2">
+              <div class="skill-icon">
+                <i class="fas fa-sync-alt"></i>
+              </div>
+              <span class="skill-name">Rápida adaptación</span>
+            </div>
+            <div class="soft-skill-item" style="--skill-color: #667eea">
+              <div class="skill-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <span class="skill-name">Creatividad</span>
+            </div>
+            <div class="soft-skill-item" style="--skill-color: #764ba2">
+              <div class="skill-icon">
+                <i class="fas fa-comments"></i>
+              </div>
+              <span class="skill-name">Comunicación</span>
+            </div>
+            <div class="soft-skill-item" style="--skill-color: #667eea">
+              <div class="skill-icon">
+                <i class="fas fa-puzzle-piece"></i>
+              </div>
+              <span class="skill-name">Resolución de problemas</span>
+            </div>
+            <div class="soft-skill-item" style="--skill-color: #764ba2">
+              <div class="skill-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <span class="skill-name">Gestión del tiempo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Info Card -->
+      <div class="about-card info-card">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <h3 class="card-title">Información Personal</h3>
+        </div>
+        <div class="card-content">
+          <div class="personal-info-list">
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="info-content">
+                <span class="info-label">Ubicación</span>
+                <span class="info-value">España</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="info-content">
+                <span class="info-label">Formación</span>
+                <span class="info-value">Técnico Superior DAM</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                <i class="fas fa-briefcase"></i>
+              </div>
+              <div class="info-content">
+                <span class="info-label">Estado</span>
+                <span class="info-value">Disponible para trabajar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
