@@ -1,75 +1,61 @@
-<section class="experience" id="experience">
-  <div class="experience-container">
-    <div class="section-header">
+<section class="experience-section" id="experience">
+  <div class="container">
+    <div class="experience-header">
+      <div class="section-badge">
+        <i class="fas fa-briefcase"></i>
+        Experiencia
+      </div>
       <h2 class="section-title">Mi Trayectoria</h2>
-      <div class="section-line"></div>
       <p class="section-subtitle">
-        Experiencia profesional y formación académica
+        Experiencia profesional y formación académica que me han formado como desarrollador
       </p>
     </div>
 
-    <!-- Timeline -->
-    <div class="timeline">
-      <div class="timeline-item" *ngFor="let item of timelineItems; let i = index" [class.left]="i % 2 === 0" [class.right]="i % 2 === 1">
-        
-        <!-- Timeline marker -->
-        <div class="timeline-marker">
-          <div class="timeline-icon" [ngClass]="item.type">
-            <i [class]="getIcon(item.type)"></i>
+    <!-- Experience Cards -->
+    <div class="work-section">
+      <h3 class="subsection-title">
+        <i class="fas fa-briefcase"></i>
+        Experiencia Laboral
+      </h3>
+      <div class="experience-grid">
+        <div class="experience-card" *ngFor="let item of getWorkExperience(); let i = index" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 100" [attr.data-type]="item.type">
+          <!-- Logo and Status -->
+          <div class="card-header">
+            <div class="company-logo">
+              <img [src]="item.logo" [alt]="item.company + ' logo'" (error)="handleImageError($event)" />
+            </div>
+            <div class="card-status" [ngClass]="item.status">
+              <span class="status-dot"></span>
+              {{ getStatusText(item.status) }}
+            </div>
           </div>
-          <div class="timeline-line"></div>
-        </div>
-        
-        <!-- Timeline content -->
-        <div class="timeline-content">
-          <div class="timeline-card">
-            <!-- Header with date and status -->
-            <div class="timeline-header">
-              <div class="timeline-date">
-                <i class="fas fa-calendar-alt"></i>
-                <span>{{ item.period }}</span>
-              </div>
-              <div class="timeline-status" [ngClass]="item.status">
-                <span class="status-dot"></span>
-                {{ getStatusText(item.status) }}
-              </div>
+          
+          <!-- Main Content -->
+          <div class="card-content">
+            <div class="card-badge" [ngClass]="item.type">
+              <i [class]="getIcon(item.type)"></i>
+              {{ getTypeText(item.type) }}
             </div>
             
-            <!-- Main content -->
-            <div class="timeline-body">
-              <h3 class="timeline-title">{{ item.title }}</h3>
-              <h4 class="timeline-company">
-                <i class="fas fa-building"></i>
+            <h3 class="card-title">{{ item.title }}</h3>
+            <h4 class="card-company">
+              <a [href]="item.url" target="_blank" rel="noopener noreferrer">
                 {{ item.company }}
-              </h4>
-              
-              <p class="timeline-description">{{ item.description }}</p>
-              
-              <!-- Skills used -->
-              <div class="timeline-skills" *ngIf="item.skills && item.skills.length > 0">
-                <h5><i class="fas fa-tools"></i> Tecnologías:</h5>
-                <div class="skills-tags">
-                  <span class="skill-tag" *ngFor="let skill of item.skills">{{ skill }}</span>
-                </div>
-              </div>
-              
-              <!-- Achievements -->
-              <div class="timeline-achievements" *ngIf="item.achievements && item.achievements.length > 0">
-                <h5><i class="fas fa-trophy"></i> Logros destacados:</h5>
-                <ul class="achievements-list">
-                  <li *ngFor="let achievement of item.achievements">
-                    <i class="fas fa-check-circle"></i>
-                    {{ achievement }}
-                  </li>
-                </ul>
-              </div>
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </h4>
+            <div class="card-period">
+              <i class="fas fa-calendar-alt"></i>
+              {{ item.period }}
             </div>
-
-            <!-- Footer with type indicator -->
-            <div class="timeline-footer">
-              <div class="type-indicator" [ngClass]="item.type">
-                <i [class]="getIcon(item.type)"></i>
-                <span>{{ getTypeText(item.type) }}</span>
+            
+            <p class="card-description">{{ item.description }}</p>
+            
+            <!-- Skills -->
+            <div class="card-skills" *ngIf="item.skills && item.skills.length > 0">
+              <h5><i class="fas fa-tools"></i> Tecnologías</h5>
+              <div class="skills-list">
+                <span class="skill-tag" *ngFor="let skill of item.skills">{{ skill }}</span>
               </div>
             </div>
           </div>
@@ -77,64 +63,70 @@
       </div>
     </div>
 
-    <!-- Experience Summary Stats -->
-    <div class="experience-stats">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon work">
-            <i class="fas fa-briefcase"></i>
+    <!-- Education Section -->
+    <div class="education-section">
+      <h3 class="subsection-title">
+        <i class="fas fa-graduation-cap"></i>
+        Formación Académica
+      </h3>
+      <div class="experience-grid">
+        <div class="experience-card" *ngFor="let item of getEducation(); let i = index" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 100" [attr.data-type]="item.type">
+          <!-- Logo and Status -->
+          <div class="card-header">
+            <div class="company-logo">
+              <img [src]="item.logo" [alt]="item.company + ' logo'" (error)="handleImageError($event)" />
+            </div>
+            <div class="card-status" [ngClass]="item.status">
+              <span class="status-dot"></span>
+              {{ getStatusText(item.status) }}
+            </div>
           </div>
-          <div class="stat-content">
-            <div class="stat-number">{{ getWorkExperienceCount() }}</div>
-            <div class="stat-label">Experiencias Laborales</div>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon education">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <div class="stat-content">
-            <div class="stat-number">{{ getEducationCount() }}</div>
-            <div class="stat-label">Formación Académica</div>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon years">
-            <i class="fas fa-clock"></i>
-          </div>
-          <div class="stat-content">
-            <div class="stat-number">{{ getTotalYears() }}+</div>
-            <div class="stat-label">Años de Experiencia</div>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon skills">
-            <i class="fas fa-code"></i>
-          </div>
-          <div class="stat-content">
-            <div class="stat-number">{{ getTotalSkills() }}</div>
-            <div class="stat-label">Tecnologías Dominadas</div>
+          
+          <!-- Main Content -->
+          <div class="card-content">
+            <div class="card-badge" [ngClass]="item.type">
+              <i [class]="getIcon(item.type)"></i>
+              {{ getTypeText(item.type) }}
+            </div>
+            
+            <h3 class="card-title">{{ item.title }}</h3>
+            <h4 class="card-company">
+              <a [href]="item.url" target="_blank" rel="noopener noreferrer">
+                {{ item.company }}
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </h4>
+            <div class="card-period">
+              <i class="fas fa-calendar-alt"></i>
+              {{ item.period }}
+            </div>
+            
+            <p class="card-description">{{ item.description }}</p>
+            
+            <!-- Skills -->
+            <div class="card-skills" *ngIf="item.skills && item.skills.length > 0">
+              <h5><i class="fas fa-tools"></i> Tecnologías</h5>
+              <div class="skills-list">
+                <span class="skill-tag" *ngFor="let skill of item.skills">{{ skill }}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Call to Action -->
-    <div class="experience-cta">
-      <div class="cta-content">
-        <h3>¿Quieres conocer más sobre mi experiencia?</h3>
-        <p>Descarga mi CV completo o contacta conmigo directamente</p>
-        <div class="cta-buttons">
-          <a href="assets/cv/alvaro-castilla-cv.pdf" target="_blank" class="btn btn-primary">
+    <!-- CV Download Section -->
+    <div class="cv-section">
+      <div class="cv-card">
+        <div class="cv-icon">
+          <i class="fas fa-file-pdf"></i>
+        </div>
+        <div class="cv-content">
+          <h3>Descarga mi CV completo</h3>
+          <p>Conoce todos los detalles de mi experiencia profesional y formación</p>
+          <a href="public/cv/CV_Alvaro_Castilla_Cano.pdf" target="_blank" class="cv-btn">
             <i class="fas fa-download"></i>
             Descargar CV
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            <i class="fas fa-envelope"></i>
-            Contactar
           </a>
         </div>
       </div>
