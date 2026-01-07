@@ -7,6 +7,8 @@ interface TimelineItem {
   description: string;
   type: 'work' | 'education' | 'certification';
   status: 'completed' | 'current' | 'upcoming';
+  logo: string;
+  url: string;
   skills?: string[];
   achievements?: string[];
 }
@@ -20,42 +22,46 @@ export class ExperienceComponent {
   timelineItems: TimelineItem[] = [
     {
       title: 'Frontend Developer',
-      company: 'Babel',
-      period: '2025 - 2025',
-      description: 'Desarrollo frontend con Angular, creación de interfaces de usuario modernas y responsivas.',
+      company: 'Babel Sistemas de Información',
+      period: '2025',
+      description: 'Desarrollo de componentes frontend y mantenimiento de aplicaciones SPA para cliente final. Integración en equipo Agile (Scrum) utilizando Jira, gestión de versiones con Git/Azure DevOps y consumo de APIs REST.',
       type: 'work',
-      status: 'current',
-      skills: ['Angular', 'TypeScript', 'HTML5', 'CSS3', 'JavaScript'],
-      achievements: [
-        'Desarrollo de aplicaciones web SPA',
-        'Implementación de diseño responsivo',
-        'Optimización de rendimiento frontend'
-      ]
+      status: 'completed',
+      logo: 'https://www.fororsemalaga.es/wp-content/uploads/2015/10/BABEL1.png',
+      url: 'https://babelgroup.com/',
+      skills: ['Angular', 'TypeScript', 'HTML5', 'CSS3', 'Git', 'Scrum', 'Jira']
     },
     {
       title: 'Técnico Superior en Desarrollo de Aplicaciones Multiplataforma',
-      company: 'Centro de Formación',
+      company: 'Salesianos de Triana',
       period: '2023 - 2025',
-      description: 'Formación completa en desarrollo de aplicaciones para múltiples plataformas.',
+      description: 'Formación completa en desarrollo multiplataforma con Java, Spring Boot, Angular, Flutter y metodologías ágiles.',
       type: 'education',
-      status: 'current',
-      skills: ['Java', 'Android', 'Flutter', 'Spring Boot', 'PostgreSQL', 'Git'],
-      achievements: [
-        'Desarrollo de aplicaciones móviles',
-        'Creación de APIs REST',
-        'Gestión de bases de datos'
-      ]
+      status: 'completed',
+      logo: 'https://www.salesianos.es/wp-content/uploads/2020/03/Logo-Salesianos_vertical.png',
+      url: 'https://triana.salesianos.edu/',
+      skills: ['Java', 'Angular', 'Spring Boot', 'Flutter', 'PostgreSQL', 'TypeScript', 'Python', 'Docker', 'HTML5', 'CSS3', 'Figma', 'Git', 'Metodologías Ágiles']
     },
     {
       title: 'Bachillerato Científico-Tecnológico',
-      company: 'Instituto de Educación Secundaria',
+      company: 'IES Nicolás Copérnico',
       period: '2021 - 2023',
-      description: 'Formación en ciencias y tecnología.',
+      description: '',
       type: 'education',
       status: 'completed',
-      skills: ['Matemáticas', 'Física', 'Química', 'Tecnología']
+      logo: 'https://iesnicolascopernico.com/wp-content/uploads/2021/03/Escudo-Copernico-Aday-transp-265x300.png',
+      url: 'https://iesnicolascopernico.com/',
+      skills: []
     }
   ];
+
+  getWorkExperience(): TimelineItem[] {
+    return this.timelineItems.filter(item => item.type === 'work');
+  }
+
+  getEducation(): TimelineItem[] {
+    return this.timelineItems.filter(item => item.type === 'education');
+  }
 
   getIcon(type: string): string {
     const icons = {
@@ -116,4 +122,22 @@ export class ExperienceComponent {
     });
     return allSkills.size;
   }
+
+  handleImageError(event: any): void {
+    // Fallback to a default logo or hide the image
+    const img = event.target as HTMLImageElement;
+    img.style.display = 'none';
+    
+    // Add a default icon or text as fallback
+    const logoContainer = img.parentElement;
+    if (logoContainer && !logoContainer.querySelector('.fallback-icon')) {
+      const fallbackIcon = document.createElement('i');
+      fallbackIcon.className = 'fas fa-building fallback-icon';
+      fallbackIcon.style.fontSize = '24px';
+      fallbackIcon.style.color = '#718096';
+      logoContainer.appendChild(fallbackIcon);
+    }
+  }
 }
+
+

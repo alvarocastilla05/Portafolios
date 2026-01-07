@@ -9,25 +9,18 @@
     </div>
 
     <!-- About Content -->
-    <div class="about-content">
+    <div class="about-content" *ngIf="personalData">
       <!-- Introduction Card -->
       <div class="about-card introduction-card">
         <div class="card-header">
           <div class="card-icon">
             <i class="fas fa-user-tie"></i>
           </div>
-          <h3 class="card-title">¡Hola! Soy Álvaro</h3>
+          <h3 class="card-title">¡Hola! Soy {{ personalData.personalInfo.name }}</h3>
         </div>
         <div class="card-content">
           <p class="main-description">
-            Apasionado del trabajo, con ganas de aprender cosas nuevas y enfrentar nuevos retos. 
-            Me considero una persona proactiva, con facilidad para trabajar en equipo y adaptarme 
-            rápidamente a nuevos entornos. Siempre busco la excelencia en cada proyecto que emprendo.
-          </p>
-          <p class="secondary-description">
-            Como Técnico en Desarrollo de Aplicaciones Multiplataforma, tengo experiencia en el 
-            desarrollo web y móvil, utilizando tecnologías modernas como Angular, Spring Boot y Flutter. 
-            Me apasiona crear soluciones tecnológicas que generen un impacto positivo.
+            {{ personalData.personalInfo.description }}
           </p>
         </div>
       </div>
@@ -42,31 +35,16 @@
         </div>
         <div class="card-content">
           <div class="languages-list">
-            <div class="language-item">
+            <div class="language-item" *ngFor="let language of personalData.languages; let i = index">
               <div class="language-info">
-                <span class="language-name">Español</span>
-                <span class="language-level">Nativo</span>
+                <span class="language-name">{{ language.name }}</span>
+                <span class="language-level">{{ language.level }}</span>
               </div>
               <div class="language-bar">
-                <div class="language-progress" style="width: 100%; --progress-color: #667eea"></div>
-              </div>
-            </div>
-            <div class="language-item">
-              <div class="language-info">
-                <span class="language-name">Inglés</span>
-                <span class="language-level">B1</span>
-              </div>
-              <div class="language-bar">
-                <div class="language-progress" style="width: 70%; --progress-color: #764ba2"></div>
-              </div>
-            </div>
-            <div class="language-item">
-              <div class="language-info">
-                <span class="language-name">Francés</span>
-                <span class="language-level">A2</span>
-              </div>
-              <div class="language-bar">
-                <div class="language-progress" style="width: 40%; --progress-color: #667eea"></div>
+                <div class="language-progress" 
+                     [style.width.%]="getLanguageProgress(language.level)" 
+                     [style.--progress-color]="i % 2 === 0 ? '#667eea' : '#764ba2'">
+                </div>
               </div>
             </div>
           </div>
@@ -83,41 +61,13 @@
         </div>
         <div class="card-content">
           <div class="soft-skills-grid">
-            <div class="soft-skill-item" style="--skill-color: #667eea">
+            <div class="soft-skill-item" 
+                 *ngFor="let skill of personalData.softSkills; let i = index" 
+                 [style.--skill-color]="i % 2 === 0 ? '#667eea' : '#764ba2'">
               <div class="skill-icon">
-                <i class="fas fa-handshake"></i>
+                <i [class]="getSoftSkillIcon(skill)"></i>
               </div>
-              <span class="skill-name">Trabajo en equipo</span>
-            </div>
-            <div class="soft-skill-item" style="--skill-color: #764ba2">
-              <div class="skill-icon">
-                <i class="fas fa-sync-alt"></i>
-              </div>
-              <span class="skill-name">Rápida adaptación</span>
-            </div>
-            <div class="soft-skill-item" style="--skill-color: #667eea">
-              <div class="skill-icon">
-                <i class="fas fa-lightbulb"></i>
-              </div>
-              <span class="skill-name">Creatividad</span>
-            </div>
-            <div class="soft-skill-item" style="--skill-color: #764ba2">
-              <div class="skill-icon">
-                <i class="fas fa-comments"></i>
-              </div>
-              <span class="skill-name">Comunicación</span>
-            </div>
-            <div class="soft-skill-item" style="--skill-color: #667eea">
-              <div class="skill-icon">
-                <i class="fas fa-puzzle-piece"></i>
-              </div>
-              <span class="skill-name">Resolución de problemas</span>
-            </div>
-            <div class="soft-skill-item" style="--skill-color: #764ba2">
-              <div class="skill-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <span class="skill-name">Gestión del tiempo</span>
+              <span class="skill-name">{{ skill }}</span>
             </div>
           </div>
         </div>
@@ -139,7 +89,7 @@
               </div>
               <div class="info-content">
                 <span class="info-label">Ubicación</span>
-                <span class="info-value">La Luisiana (Sevilla)</span>
+                <span class="info-value">{{ personalData.personalInfo.location }}</span>
               </div>
             </div>
             <div class="info-item">
@@ -148,7 +98,7 @@
               </div>
               <div class="info-content">
                 <span class="info-label">Formación</span>
-                <span class="info-value">Técnico Superior DAM</span>
+                <span class="info-value">{{ personalData.personalInfo.title }}</span>
               </div>
             </div>
             <div class="info-item">

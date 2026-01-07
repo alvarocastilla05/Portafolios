@@ -83,19 +83,19 @@ export class SkillsComponent implements OnInit {
             {
               name: "Java",
               icon: "fab fa-java",
-              description: "Lenguaje principal",
+              description: "Backend & POO",
               color: "#f89820"
             },
             {
               name: "JavaScript/TypeScript",
               icon: "fab fa-js-square",
-              description: "Frontend & Backend",
+              description: "Tipado estático & ES6+",
               color: "#f7df1e"
             },
             {
               name: "Python",
               icon: "fab fa-python",
-              description: "Desarrollo general",
+              description: "Scripting & Automatización",
               color: "#3776ab"
             }
           ]
@@ -108,19 +108,19 @@ export class SkillsComponent implements OnInit {
             {
               name: "Angular",
               icon: "fab fa-angular",
-              description: "Experiencia laboral",
+              description: "SPAs Escalables",
               color: "#dd0031"
             },
             {
               name: "Spring Boot",
               icon: "fas fa-leaf",
-              description: "Backend Java",
+              description: "APIs REST & Seguridad",
               color: "#6db33f"
             },
             {
               name: "Flutter",
               icon: "fas fa-mobile-alt",
-              description: "Desarrollo móvil",
+              description: "Apps Nativas iOS/Android",
               color: "#02569b"
             }
           ]
@@ -133,13 +133,13 @@ export class SkillsComponent implements OnInit {
             {
               name: "HTML5",
               icon: "fab fa-html5",
-              description: "Estructura web",
+              description: "Semántica & Accesibilidad",
               color: "#e34f26"
             },
             {
               name: "CSS3",
               icon: "fab fa-css3-alt",
-              description: "Estilos avanzados",
+              description: "Diseño Responsive & Grid",
               color: "#1572b6"
             }
           ]
@@ -152,39 +152,39 @@ export class SkillsComponent implements OnInit {
             {
               name: "PostgreSQL",
               icon: "fas fa-database",
-              description: "Base de datos",
+              description: "Consultas SQL & Relacional",
               color: "#336791"
             },
             {
               name: "Docker",
               icon: "fab fa-docker",
-              description: "Contenedores",
+              description: "Despliegue & Contenedores",
               color: "#2496ed"
             },
             {
               name: "Figma",
               icon: "fab fa-figma",
-              description: "Prototipado",
+              description: "Diseño UI/UX & Prototipado",
               color: "#f24e1e"
             }
           ]
         }
       ],
       methodologies: {
-        title: "Metodologías",
+        title: "Gestión & DevOps",
         items: [
           {
-            name: "Metodologías Ágiles",
+            name: "Metodologías Ágiles: Scrum & Sprints",
             icon: "fas fa-users-cog",
             color: "#667eea"
           },
           {
-            name: "Jira",
+            name: "Jira: Gestión de Tareas",
             icon: "fab fa-jira",
             color: "#0052cc"
           },
           {
-            name: "Azure DevOps",
+            name: "Azure DevOps: CI/CD & Gitflow",
             icon: "fab fa-microsoft",
             color: "#0078d4"
           },

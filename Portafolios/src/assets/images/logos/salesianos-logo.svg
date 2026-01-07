@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="salesianosGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="16" fill="url(#salesianosGradient)"/>
+  <!-- Salesian cross -->
+  <rect x="45" y="20" width="10" height="40" fill="white"/>
+  <rect x="30" y="35" width="40" height="10" fill="white"/>
+  <!-- Heart symbol for Don Bosco -->
+  <path d="M50 65 C45 60, 35 55, 35 45 C35 40, 40 35, 45 35 C47 35, 49 36, 50 38 C51 36, 53 35, 55 35 C60 35, 65 40, 65 45 C65 55, 55 60, 50 65 Z" fill="white"/>
+  <!-- Letters S (Salesianos) -->
+  <text x="20" y="85" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">S</text>
+  <text x="80" y="85" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">T</text>
+</svg>
