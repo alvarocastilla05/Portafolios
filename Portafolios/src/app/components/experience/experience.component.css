@@ -1,7 +1,7 @@
 /* Experience Section */
 .experience-section {
   min-height: 100vh;
-  padding: 120px 0;
+  padding: 100px 0 80px 0;
   background: #ffffff;
   position: relative;
   overflow: hidden;
@@ -96,21 +96,39 @@
   font-weight: 400;
 }
 
+/* Experience Content */
+.experience-content {
+  background: rgba(248, 250, 252, 0.5);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 50px;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
 /* Experience Grid */
 .work-section,
 .education-section {
   position: relative;
-  padding-top: 60px;
+  padding-top: 30px;
+}
+
+.work-section {
+  padding-top: 0;
+}
+
+.education-section {
+  padding-top: 40px;
 }
 
 .education-section::before {
   content: '';
   position: absolute;
-  top: 30px;
+  top: 15px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 2px;
+  width: 60px;
+  height: 1px;
   background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
 }
 
@@ -169,7 +187,7 @@
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 30px;
+  gap: 20px;
 }
 
 /* Experience Cards */

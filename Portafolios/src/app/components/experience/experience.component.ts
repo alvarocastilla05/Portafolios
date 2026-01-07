@@ -24,12 +24,12 @@ export class ExperienceComponent {
       title: 'Frontend Developer',
       company: 'Babel Sistemas de Información',
       period: '2025',
-      description: 'Desarrollo de aplicaciones web modernas con Angular y TypeScript.',
+      description: 'Desarrollo de componentes frontend y mantenimiento de aplicaciones SPA para cliente final. Integración en equipo Agile (Scrum) utilizando Jira, gestión de versiones con Git/Azure DevOps y consumo de APIs REST.',
       type: 'work',
       status: 'completed',
       logo: 'https://www.fororsemalaga.es/wp-content/uploads/2015/10/BABEL1.png',
       url: 'https://babelgroup.com/',
-      skills: ['Angular', 'TypeScript', 'HTML5', 'CSS3']
+      skills: ['Angular', 'TypeScript', 'HTML5', 'CSS3', 'Git', 'Scrum', 'Jira']
     },
     {
       title: 'Técnico Superior en Desarrollo de Aplicaciones Multiplataforma',
@@ -40,18 +40,18 @@ export class ExperienceComponent {
       status: 'completed',
       logo: 'https://www.salesianos.es/wp-content/uploads/2020/03/Logo-Salesianos_vertical.png',
       url: 'https://triana.salesianos.edu/',
-      skills: ['Java', 'Spring Boot', 'Angular', 'Flutter', 'TypeScript', 'JavaScript', 'Python', 'PostgreSQL', 'HTML5', 'CSS3', 'Docker', 'Figma', 'Metodologías Ágiles']
+      skills: ['Java', 'Angular', 'Spring Boot', 'Flutter', 'PostgreSQL', 'TypeScript', 'Python', 'Docker', 'HTML5', 'CSS3', 'Figma', 'Git', 'Metodologías Ágiles']
     },
     {
       title: 'Bachillerato Científico-Tecnológico',
       company: 'IES Nicolás Copérnico',
       period: '2021 - 2023',
-      description: 'Formación en ciencias y tecnología con especialización en matemáticas y física.',
+      description: '',
       type: 'education',
       status: 'completed',
       logo: 'https://iesnicolascopernico.com/wp-content/uploads/2021/03/Escudo-Copernico-Aday-transp-265x300.png',
       url: 'https://iesnicolascopernico.com/',
-      skills: ['Matemáticas', 'Física', 'Química', 'Tecnología']
+      skills: []
     }
   ];
 
@@ -139,3 +139,5 @@ export class ExperienceComponent {
     }
   }
 }
+
+

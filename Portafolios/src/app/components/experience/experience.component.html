@@ -1,22 +1,19 @@
 <section class="experience-section" id="experience">
   <div class="container">
     <div class="experience-header">
-      <div class="section-badge">
-        <i class="fas fa-briefcase"></i>
-        Experiencia
-      </div>
-      <h2 class="section-title">Mi Trayectoria</h2>
+      <h2 class="section-title">Mi Trayectoria Profesional</h2>
       <p class="section-subtitle">
-        Experiencia profesional y formación académica que me han formado como desarrollador
+        Un recorrido que combina experiencia práctica con sólida formación académica
       </p>
     </div>
 
-    <!-- Experience Cards -->
-    <div class="work-section">
-      <h3 class="subsection-title">
-        <i class="fas fa-briefcase"></i>
-        Experiencia Laboral
-      </h3>
+    <!-- Experience Content -->
+    <div class="experience-content">
+      <div class="work-section">
+        <h3 class="subsection-title">
+          <i class="fas fa-briefcase"></i>
+          Experiencia Laboral
+        </h3>
       <div class="experience-grid">
         <div class="experience-card" *ngFor="let item of getWorkExperience(); let i = index" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="i * 100" [attr.data-type]="item.type">
           <!-- Logo and Status -->
@@ -115,21 +112,6 @@
       </div>
     </div>
 
-    <!-- CV Download Section -->
-    <div class="cv-section">
-      <div class="cv-card">
-        <div class="cv-icon">
-          <i class="fas fa-file-pdf"></i>
-        </div>
-        <div class="cv-content">
-          <h3>Descarga mi CV completo</h3>
-          <p>Conoce todos los detalles de mi experiencia profesional y formación</p>
-          <a href="public/cv/CV_Alvaro_Castilla_Cano.pdf" target="_blank" class="cv-btn">
-            <i class="fas fa-download"></i>
-            Descargar CV
-          </a>
-        </div>
-      </div>
     </div>
   </div>
 </section>
