@@ -51,6 +51,19 @@
           <h3 class="project-title">{{ project.title }}</h3>
           <p class="project-description">{{ project.description }}</p>
           
+          <!-- Technical Challenges Section -->
+          <div class="technical-challenges" *ngIf="project.challenges">
+            <h4 class="challenges-title">
+              <i class="fas fa-cogs"></i>
+              Desafíos Técnicos
+            </h4>
+            <ul class="challenges-list">
+              <li *ngFor="let challenge of project.challenges" class="challenge-item">
+                {{ challenge }}
+              </li>
+            </ul>
+          </div>
+          
           <!-- Technology Tags -->
           <div class="tech-tags">
             <span class="tech-tag" *ngFor="let tech of project.technologies">
