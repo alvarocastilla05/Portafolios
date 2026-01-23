@@ -1,20 +1,22 @@
 <section class="skills-section" id="skills">
   <div class="container">
     <!-- Header -->
-    <div class="skills-header" *ngIf="skillsData">
-      <h2 class="section-title">{{ skillsData.title }}</h2>
-      <p class="section-subtitle">{{ skillsData.subtitle }}</p>
+    <div class="text-center mb-5" *ngIf="skillsData">
+      <h2 class="fw-bold" style="color: #6f42c1;">
+        {{ skillsData.title }}
+      </h2>
+
+      <p class="text-muted mb-0">
+        {{ skillsData.subtitle }}
+      </p>
     </div>
 
     <!-- Skills Grid -->
     <div class="skills-content" *ngIf="skillsData">
       <!-- Main Technical Skills Grid -->
       <div class="main-skills-grid">
-        <div 
-          class="skill-category-card" 
-          *ngFor="let category of skillsData.categories; let i = index"
-          [style.animation-delay.ms]="i * 150"
-        >
+        <div class="skill-category-card" *ngFor="let category of skillsData.categories; let i = index"
+          [style.animation-delay.ms]="i * 150">
           <!-- Category Header -->
           <div class="category-header">
             <div class="category-icon">
@@ -25,12 +27,8 @@
 
           <!-- Skills List -->
           <div class="skills-list">
-            <div 
-              class="skill-item" 
-              *ngFor="let skill of category.skills; let j = index"
-              [style.animation-delay.ms]="(i * 150) + (j * 50)"
-              [style.--skill-color]="skill.color"
-            >
+            <div class="skill-item" *ngFor="let skill of category.skills; let j = index"
+              [style.animation-delay.ms]="(i * 150) + (j * 50)" [style.--skill-color]="skill.color">
               <div class="skill-content">
                 <div class="skill-icon-wrapper">
                   <div class="skill-icon" [style.color]="skill.color">
@@ -48,21 +46,19 @@
         </div>
 
         <!-- Methodologies Card integrated in the main grid -->
-        <div class="skill-category-card methodologies-card" *ngIf="skillsData.methodologies" [style.animation-delay.ms]="skillsData.categories.length * 150">
+        <div class="skill-category-card methodologies-card" *ngIf="skillsData.methodologies"
+          [style.animation-delay.ms]="skillsData.categories.length * 150">
           <div class="category-header">
             <div class="category-icon">
               <i class="fas fa-cog"></i>
             </div>
             <h3 class="category-title">{{ skillsData.methodologies.title }}</h3>
           </div>
-          
+
           <div class="methodologies-list">
-            <div 
-              class="methodology-item" 
-              *ngFor="let item of skillsData.methodologies.items; let i = index"
+            <div class="methodology-item" *ngFor="let item of skillsData.methodologies.items; let i = index"
               [style.animation-delay.ms]="(skillsData.categories.length * 150) + (i * 50)"
-              [style.--methodology-color]="item.color"
-            >
+              [style.--methodology-color]="item.color">
               <div class="methodology-icon" [style.background]="item.color + '15'" [style.color]="item.color">
                 <i [class]="item.icon"></i>
               </div>

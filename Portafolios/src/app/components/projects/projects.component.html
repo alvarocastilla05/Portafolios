@@ -1,257 +1,241 @@
-<section class="projects" id="projects">
-  <div class="projects-container">
-    <!-- Header Section -->
-    <div class="section-header">
-      <h2 class="section-title">Mis Proyectos</h2>
-      <div class="section-line"></div>
-      <p class="section-subtitle">
-        Explora una colección de proyectos que demuestran mi experiencia en desarrollo full-stack,
-        desde aplicaciones web modernas hasta soluciones de inteligencia artificial.
-      </p>
-    </div>
+<div class="container py-5" id="projects">
 
-    <!-- Statistics -->
-    <div class="projects-stats">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-icon">
-            <i class="fas fa-project-diagram"></i>
-          </div>
-          <div class="stat-content">
-            <span class="stat-number">{{ getProjectStats().total }}</span>
-            <span class="stat-label">Proyectos Totales</span>
-          </div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-icon">
-            <i class="fas fa-check-circle"></i>
-          </div>
-          <div class="stat-content">
-            <span class="stat-number">{{ getProjectStats().completed }}</span>
-            <span class="stat-label">Completados</span>
-          </div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="stat-content">
-            <span class="stat-number">{{ getProjectStats().featured }}</span>
-            <span class="stat-label">Destacados</span>
-          </div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <div class="stat-content">
-            <span class="stat-number">{{ getProjectStats().technologies }}</span>
-            <span class="stat-label">Tecnologías</span>
-          </div>
-        </div>
-      </div>
-    </div>
+  <h2 class="text-center mb-5 fw-bold" style="color: #6f42c1;">Proyectos Destacados</h2>
+  <p class="text-center text-muted mb-5">Soluciones técnicas que demuestran arquitectura, rendimiento y escalabilidad
+  </p>
 
-    <!-- Filters -->
-    <div class="projects-filters">
-      <div class="filter-group">
-        <label class="filter-label">
-          <i class="fas fa-filter"></i>
-          Categoría:
-        </label>
-        <div class="filter-buttons">
-          <button 
-            *ngFor="let category of categories"
-            class="filter-btn"
-            [class.active]="selectedCategory === category.value"
-            (click)="onCategoryChange(category.value)">
-            <i [class]="category.icon"></i>
-            {{ category.label }}
-          </button>
-        </div>
+
+
+  <div class="card mb-5 border-0 shadow-sm bg-white rounded-4 overflow-hidden">
+    <div class="row g-0">
+      <div class="col-md-6 bg-light d-flex align-items-center justify-content-center overflow-hidden">
+        <img src="assets/images/proyectos/Filimufy.png" class="img-fluid" alt="Captura de pantalla de FilimuFy"
+          style="width: 100%; object-fit: contain; transform: scale(1.05);">
       </div>
 
-      <div class="filter-group">
-        <label class="filter-label">
-          <i class="fas fa-code"></i>
-          Tecnología:
-        </label>
-        <select 
-          class="filter-select"
-          [(ngModel)]="selectedTechnology"
-          (change)="onTechnologyChange(selectedTechnology)">
-          <option value="all">Todas las tecnologías</option>
-          <option *ngFor="let tech of technologies" [value]="tech">{{ tech }}</option>
-        </select>
-      </div>
-
-      <div class="filter-toggle">
-        <label class="toggle-label">
-          <input 
-            type="checkbox" 
-            [(ngModel)]="showFeaturedOnly" 
-            (change)="toggleFeaturedOnly()">
-          <span class="toggle-slider"></span>
-          Solo proyectos destacados
-        </label>
-      </div>
-    </div>
-
-    <!-- Loading State -->
-    <div *ngIf="isLoading" class="loading-container">
-      <div class="loading-spinner"></div>
-      <p>Cargando proyectos...</p>
-    </div>
-
-    <!-- Projects Grid -->
-    <div *ngIf="!isLoading" class="projects-grid">
-      <div 
-        *ngFor="let project of filteredProjects; trackBy: trackByProjectId"
-        class="project-card"
-        [class.featured]="project.featured">
-        
-        <!-- Project Image -->
-        <div class="project-image">
-          <img [src]="project.image" [alt]="project.title">
-          <div class="project-overlay">
-            <div class="project-actions">
-              <a [href]="project.githubUrl" target="_blank" class="action-btn github">
-                <i class="fab fa-github"></i>
-                <span>Código</span>
-              </a>
-              <a *ngIf="project.demoUrl" [href]="project.demoUrl" target="_blank" class="action-btn demo">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Demo</span>
-              </a>
-            </div>
+      <div class="col-md-6">
+        <div class="card-body p-4 p-lg-5">
+          <div class="d-flex align-items-center mb-2">
+            <h3 class="card-title mb-0 me-3 fw-bold">FilimuFy</h3>
+            <span class="badge bg-light text-dark border">Frontend Expert</span>
           </div>
-          
-          <!-- Featured Badge -->
-          <div *ngIf="project.featured" class="featured-badge">
-            <i class="fas fa-star"></i>
-            Destacado
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">Angular 17+</span>
+            <span class="badge bg-secondary me-1">RxJS</span>
+            <span class="badge bg-secondary me-1">Bootstrap</span>
+            <span class="badge bg-secondary me-1">TMDB API</span>
+            <span class="badge bg-secondary me-1">Vercel CI/CD</span>
           </div>
-          
-          <!-- Status Badge -->
-          <div class="status-badge" [style.background-color]="getStatusColor(project.status)">
-            {{ getStatusText(project.status) }}
+          <p class="card-text text-muted">SPA de alto rendimiento para gestión multimedia con sincronización de estado
+            reactiva y optimista.</p>
+
+          <h5 class="mt-4 mb-3 fw-semibold text-primary">Engineering Challenges:</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border-0 ps-0 py-2 d-flex">
+              <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+              <div>
+                <strong>Reactive State Sync:</strong> Sincronización en tiempo real de estados de usuario
+                (Favoritos/Rating) usando <code>forkJoin</code> y BehaviorSubjects para una UX sin latencia.
+              </div>
+            </li>
+            <li class="list-group-item border-0 ps-0 py-2 d-flex">
+              <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+              <div>
+                <strong>Environment-Agnostic Auth:</strong> Flujo OAuth inteligente que detecta el origen
+                (`window.origin`) para redirecciones seguras en local y producción.
+              </div>
+            </li>
+            <li class="list-group-item border-0 ps-0 py-2 d-flex">
+              <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+              <div>
+                <strong>Optimistic UI with NgZone:</strong> Gestión avanzada de la detección de cambios para
+                actualizar la vista instantáneamente tras callbacks externos.
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-4 d-flex gap-3">
+            <a href="https://filimufy.vercel.app/" target="_blank"
+              class="btn btn-primary px-4 rounded-pill fw-semibold">
+              <i class="bi bi-rocket-takeoff me-2"></i>Ver Demo Live
+            </a>
+            <a href="https://github.com/alvarocastilla05/FilimuFy" target="_blank"
+              class="btn btn-outline-dark px-4 rounded-pill fw-semibold">
+              <i class="bi bi-github me-2"></i>Código
+            </a>
           </div>
-        </div>
-
-        <!-- Project Content -->
-        <div class="project-content">
-          <div class="project-header">
-            <h3 class="project-title">{{ project.title }}</h3>
-            <div class="project-meta">
-              <span class="project-year">
-                <i class="fas fa-calendar"></i>
-                {{ project.year }}
-              </span>
-              <span class="project-duration">
-                <i class="fas fa-clock"></i>
-                {{ project.duration }}
-              </span>
-              <span class="project-team">
-                <i class="fas fa-users"></i>
-                {{ project.teamSize }} personas
-              </span>
-            </div>
-          </div>
-
-          <p class="project-description">{{ project.description }}</p>
-
-          <!-- Technologies -->
-          <div class="project-technologies">
-            <span 
-              *ngFor="let tech of project.technologies"
-              class="tech-tag"
-              [title]="tech">
-              <i [class]="getTechnologyIcon(tech)"></i>
-              {{ tech }}
-            </span>
-          </div>
-
-          <!-- Challenges -->
-          <div class="project-details">
-            <div class="detail-section">
-              <h5>
-                <i class="fas fa-mountain"></i>
-                Desafíos Principales
-              </h5>
-              <ul class="challenges-list">
-                <li *ngFor="let challenge of project.challenges">
-                  <i class="fas fa-chevron-right"></i>
-                  {{ challenge }}
-                </li>
-              </ul>
-            </div>
-
-            <!-- Achievements -->
-            <div class="detail-section">
-              <h5>
-                <i class="fas fa-trophy"></i>
-                Logros Destacados
-              </h5>
-              <ul class="achievements-list">
-                <li *ngFor="let achievement of project.achievements">
-                  <i class="fas fa-medal"></i>
-                  {{ achievement }}
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Project Footer -->
-          <div class="project-footer">
-            <div class="project-category">
-              <i [class]="getCategoryIcon(project.category)"></i>
-              {{ getCategoryLabel(project.category) }}
-            </div>
-            <div class="project-links">
-              <a [href]="project.githubUrl" target="_blank" class="link-btn">
-                <i class="fab fa-github"></i>
-              </a>
-              <a *ngIf="project.demoUrl" [href]="project.demoUrl" target="_blank" class="link-btn">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Empty State -->
-    <div *ngIf="!isLoading && filteredProjects.length === 0" class="empty-state">
-      <div class="empty-icon">
-        <i class="fas fa-search"></i>
-      </div>
-      <h3>No se encontraron proyectos</h3>
-      <p>Intenta cambiar los filtros para ver más proyectos.</p>
-      <button class="btn-reset" (click)="resetFilters()">
-        <i class="fas fa-refresh"></i>
-        Resetear Filtros
-      </button>
-    </div>
-
-    <!-- Call to Action -->
-    <div class="projects-cta">
-      <div class="cta-content">
-        <h3>¿Interesado en colaborar?</h3>
-        <p>
-          Estoy siempre buscando nuevos desafíos y oportunidades para crear
-          soluciones innovadoras. ¡Hablemos sobre tu próximo proyecto!
-        </p>
-        <div class="cta-buttons">
-          <a href="#contact" class="btn btn-primary">
-            <i class="fas fa-envelope"></i>
-            Contactar
-          </a>
-          <a href="/assets/documents/portfolio.pdf" target="_blank" class="btn btn-outline">
-            <i class="fas fa-download"></i>
-            Descargar Portfolio
-          </a>
         </div>
       </div>
     </div>
   </div>
-</section>
+
+
+  <div class="card mb-5 border-0 shadow-sm bg-white rounded-4 overflow-hidden">
+    <div class="row g-0">
+
+      <div class="col-md-6 bg-light d-flex align-items-center justify-content-center overflow-hidden p-0">
+        <div id="carouselRecySell" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
+
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselRecySell" data-bs-slide-to="0" class="active"
+              aria-current="true"></button>
+            <button type="button" data-bs-target="#carouselRecySell" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselRecySell" data-bs-slide-to="2"></button>
+          </div>
+
+          <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="3500">
+              <div class="d-flex justify-content-center align-items-center h-100 w-100 overflow-hidden"> <img
+                  src="assets/images/proyectos/Cliente1.png" class="d-block img-fluid" alt="RecySell Marketplace"
+                  style="width: 100%; height: auto; object-fit: contain; transform: scale(1.35);"> </div>
+              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 py-1 mb-4">
+                <h6 class="mb-0 small text-white">Marketplace: Filtros Dinámicos</h6>
+              </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3500">
+              <div class="d-flex justify-content-center align-items-center h-100 w-100 overflow-hidden">
+                <img src="assets/images/proyectos/Cliente2.png" class="d-block img-fluid"
+                  alt="RecySell Historial Compras"
+                  style="width: 100%; height: auto; object-fit: contain; transform: scale(1.35);">
+              </div>
+              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 py-1 mb-4">
+                <h6 class="mb-0 small text-white">Área Personal: Historial de Compras</h6>
+              </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3500">
+              <div class="d-flex justify-content-center align-items-center h-100 w-100 overflow-hidden">
+                <img src="assets/images/proyectos/Admin.png" class="d-block img-fluid" alt="RecySell Panel Admin"
+                  style="width: 100%; height: auto; object-fit: contain; transform: scale(1.35);">
+              </div>
+              <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 rounded-3 py-1 mb-4">
+                <h6 class="mb-0 small text-white">Panel Interno: Gestión RBAC</h6>
+              </div>
+            </div>
+
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselRecySell" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark rounded-circle p-2 bg-opacity-50" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselRecySell" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-dark rounded-circle p-2 bg-opacity-50" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card-body p-4 p-lg-5">
+          <div class="d-flex align-items-center mb-2">
+            <h3 class="card-title mb-0 me-3 fw-bold">RecySell</h3>
+            <span class="badge bg-light text-dark border">Full Stack System</span>
+          </div>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">Angular</span>
+            <span class="badge bg-secondary me-1">Spring Boot 3</span>
+            <span class="badge bg-secondary me-1">PostgreSQL</span>
+            <span class="badge bg-secondary me-1">Docker</span>
+            <span class="badge bg-secondary me-1">JWT & Security</span>
+          </div>
+          <p class="card-text text-muted">Ecosistema completo de economía circular con gestión avanzada de roles (RBAC)
+            y flujos transaccionales.</p>
+
+          <h5 class="mt-4 mb-3 fw-semibold text-primary">Engineering Challenges:</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border-0 ps-0 py-2 d-flex">
+              <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+              <div>
+                <strong>Granular Security (RBAC):</strong> Aislamiento total de lógica Cliente vs Trabajador mediante
+                Guards en frontend y filtros JWT en Spring Security.
+              </div>
+            </li>
+            <li class="list-group-item border-0 ps-0 py-2 d-flex">
+              <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+              <div>
+                <strong>Multipart Transactional Handling:</strong> Endpoints REST complejos para manejar la subida
+                atómica de metadatos (DTOs JSON) y archivos binarios (imágenes).
+              </div>
+            </li>
+            <li class="list-group-item border-0 ps-0 py-2 d-flex">
+              <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+              <div>
+                <strong>Docker Orchestration:</strong> Entorno de desarrollo reproducible y despliegue contenerizado
+                (Backend + DB) con Docker Compose.
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-4 d-flex gap-3">
+            <a href="#" class="btn btn-primary px-4 rounded-pill fw-semibold disabled">
+              <i class="bi bi-rocket-takeoff me-2"></i>Demo No Disponible
+            </a>
+            <a href="https://github.com/alvarocastilla05/RecySell" target="_blank"
+              class="btn btn-outline-dark px-4 rounded-pill fw-semibold">
+              <i class="bi bi-github me-2"></i>Código
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card border-0 shadow-sm bg-white rounded-4 overflow-hidden">
+    <div class="row g-0 align-items-center">
+      <div class="col-md-5 p-3 text-center">
+        <img src="assets/images/proyectos/Conecta.png" class="img-fluid w-100 h-100 object-fit-contain"
+          alt="Diagrama o captura de Conecta" style="min-height: 300px; max-height: 400px;">
+      </div>
+      <div class="col-md-7">
+        <div class="card-body p-4 p-lg-5">
+          <div class="d-flex align-items-center mb-2">
+            <h3 class="card-title mb-0 me-3 fw-bold">Proyecto Conecta</h3>
+            <span class="badge bg-light text-dark border">Backend Architect</span>
+          </div>
+          <div class="mb-3">
+            <span class="badge bg-secondary me-1">Java Spring Boot</span>
+            <span class="badge bg-secondary me-1">JPA / Hibernate</span>
+            <span class="badge bg-secondary me-1">PostgreSQL</span>
+            <span class="badge bg-secondary me-1">REST API Design</span>
+          </div>
+          <p class="card-text text-muted">API RESTful centralizada para la gestión compleja de prácticas empresariales
+            FCT/Dual.</p>
+
+          <h5 class="mt-4 mb-3 fw-semibold text-primary">Engineering Challenges:</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item border-0 ps-0 py-2 d-flex">
+              <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+              <div>
+                <strong>Complex Data Modeling:</strong> Diseño e implementación de un esquema relacional N:M complejo
+                (Cursos ↔ Títulos ↔ Empresas).
+              </div>
+            </li>
+            <li class="list-group-item border-0 ps-0 py-2 d-flex">
+              <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+              <div>
+                <strong>REST Maturity Level 2:</strong> Diseño estricto de recursos y verbos HTTP para gestionar
+                entidades anidadas y relaciones.
+              </div>
+            </li>
+            <li class="list-group-item border-0 ps-0 py-2 d-flex">
+              <i class="bi bi-check-circle-fill text-primary me-2 mt-1"></i>
+              <div>
+                <strong>JPA Performance Tuning:</strong> Uso avanzado de Hibernate, mapeo bidireccional y fetch types
+                para evitar problemas de rendimiento (N+1 queries).
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-4 d-flex gap-3">
+            <a href="https://github.com/alvarocastilla05/ProyectoConecta" target="_blank"
+              class="btn btn-outline-dark px-4 rounded-pill fw-semibold">
+              <i class="bi bi-github me-2"></i>Ver Código Backend
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

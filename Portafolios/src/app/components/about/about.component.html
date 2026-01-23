@@ -2,10 +2,8 @@
   <div class="container">
     <!-- Header -->
     <div class="about-header">
-      <h2 class="section-title">Sobre mí</h2>
-      <p class="section-subtitle">
-        Conoce más sobre mi experiencia, habilidades y lo que me apasiona del desarrollo de software
-      </p>
+      <h2 class="text-center mb-5 fw-bold" style="color: #6f42c1;">Sobre Mí</h2>
+      <p class="text-center text-muted mb-5">Conoce más sobre mi experiencia, habilidades y lo que me apasiona</p>
     </div>
 
     <!-- About Content -->
@@ -41,9 +39,8 @@
                 <span class="language-level">{{ language.level }}</span>
               </div>
               <div class="language-bar">
-                <div class="language-progress" 
-                     [style.width.%]="getLanguageProgress(language.level)" 
-                     [style.--progress-color]="i % 2 === 0 ? '#667eea' : '#764ba2'">
+                <div class="language-progress" [style.width.%]="getLanguageProgress(language.level)"
+                  [style.--progress-color]="i % 2 === 0 ? '#667eea' : '#764ba2'">
                 </div>
               </div>
             </div>
@@ -61,9 +58,8 @@
         </div>
         <div class="card-content">
           <div class="soft-skills-grid">
-            <div class="soft-skill-item" 
-                 *ngFor="let skill of personalData.softSkills; let i = index" 
-                 [style.--skill-color]="i % 2 === 0 ? '#667eea' : '#764ba2'">
+            <div class="soft-skill-item" *ngFor="let skill of personalData.softSkills; let i = index"
+              [style.--skill-color]="i % 2 === 0 ? '#667eea' : '#764ba2'">
               <div class="skill-icon">
                 <i [class]="getSoftSkillIcon(skill)"></i>
               </div>
