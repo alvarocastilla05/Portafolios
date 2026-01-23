@@ -32,18 +32,18 @@
         </button>
       </li>
       <li class="navbar-item">
-        <button (click)="navigateToSection('projects')" class="navbar-link"
-          [class.active]="activeSection === 'projects'">
-          <i class="fas fa-folder-open"></i>
-          <span>Proyectos</span>
-          <div class="link-glow"></div>
-        </button>
-      </li>
-      <li class="navbar-item">
         <button (click)="navigateToSection('experience')" class="navbar-link"
           [class.active]="activeSection === 'experience'">
           <i class="fas fa-briefcase"></i>
           <span>Experiencia</span>
+          <div class="link-glow"></div>
+        </button>
+      </li>
+      <li class="navbar-item">
+        <button (click)="navigateToSection('projects')" class="navbar-link"
+          [class.active]="activeSection === 'projects'">
+          <i class="fas fa-folder-open"></i>
+          <span>Proyectos</span>
           <div class="link-glow"></div>
         </button>
       </li>
