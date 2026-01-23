@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+/* CLASE GLOBAL PARA TÍTULOS CON DEGRADADO */
+.text-gradient-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800; /* Letra bien gordita */
+    display: inline-block; /* Importante para que el degradado se ajuste al texto */
+}/* You can add global styles to this file, and also import other style files */
