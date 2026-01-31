@@ -1,4 +1,3 @@
-<!-- Portafolio de Álvaro Castilla Cano -->
 <app-navbar></app-navbar>
 
 <main class="main-content">
@@ -12,8 +11,12 @@
 
 <app-footer></app-footer>
 
-<!-- Font Awesome para iconos -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+<button 
+  class="scroll-to-top" 
+  [class.show]="showScrollBtn" 
+  (click)="scrollToTop()"
+  title="Volver arriba">
+  <i class="bi bi-arrow-up"></i>
+</button>
 
 <router-outlet></router-outlet>

@@ -589,3 +589,77 @@
     font-size: 2rem;
   }
 }
+
+/* === RESPONSIVE MOBILE FIXES === */
+@media (max-width: 991px) {
+  /* Imagen de perfil más pequeña para móvil */
+  .profile-img {
+    width: 160px !important;
+    height: 160px !important;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 
+      0 15px 35px rgba(0, 0, 0, 0.25),
+      0 0 0 8px rgba(255, 255, 255, 0.1),
+      0 0 0 16px rgba(255, 255, 255, 0.05);
+  }
+
+  .profile-img:hover {
+    transform: scale(1.03);
+    box-shadow: 
+      0 20px 45px rgba(0, 0, 0, 0.3),
+      0 0 0 8px rgba(255, 255, 255, 0.15),
+      0 0 0 16px rgba(255, 255, 255, 0.08);
+  }
+
+  .image-ring {
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-width: 2px;
+  }
+
+  /* Ajustar márgenes y espaciado del contenido */
+  .hero-container {
+    margin-bottom: 2rem;
+    padding: 0 20px;
+  }
+
+  .hero-content {
+    gap: 2rem;
+  }
+
+  .hero-text {
+    margin-top: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 0.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem;
+    padding: 0 10px;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    padding: 0 10px;
+  }
+
+  .hero-buttons {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Aumentar padding superior para compensar navbar fijo */
+  .hero {
+    padding-top: 120px !important;
+    min-height: 95vh;
+  }
+}
